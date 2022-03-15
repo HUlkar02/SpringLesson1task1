@@ -72,7 +72,7 @@ public class WorkerService {
         return new ApiResponse(false,"Address or Department not found");
     }
 
-    public ApiResponse edit(Long id, WorkerDto workerDto) {
+    public  ApiResponse edit(Long id, WorkerDto workerDto) {
         Optional<Worker> optional = workerRepo.findById(id);
         if (optional.isPresent()) {
             Optional<Address> optionalAddress = addressRepo.findById(workerDto.getAddressId());

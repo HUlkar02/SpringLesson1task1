@@ -49,7 +49,7 @@ public class WorkerController {
 
     @PutMapping("/edit/{id}")
     public HttpEntity<?>editCompany(@PathVariable Long id,@RequestBody  WorkerDto workerDto){
-        ApiResponse editingWorker = WorkerService.edit(id, workerDto);
+        ApiResponse editingWorker = workerService.edit(id, workerDto);
         return ResponseEntity.status(editingWorker!=null?202:409).body(editingWorker);
     }
 
